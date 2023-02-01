@@ -1,0 +1,11 @@
+C:\Users\maxnf\Desktop\Inlamning\bin\Debug\Inlamning.exe.config
+C:\Users\maxnf\Desktop\Inlamning\bin\Debug\Inlamning.exe
+C:\Users\maxnf\Desktop\Inlamning\bin\Debug\Inlamning.pdb
+C:\Users\maxnf\Desktop\Inlamning\obj\Debug\Inlamning.csproj.AssemblyReference.cache
+C:\Users\maxnf\Desktop\Inlamning\obj\Debug\Inlamning.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxnf\Desktop\Inlamning\obj\Debug\Inlamning.MainForm.resources
+C:\Users\maxnf\Desktop\Inlamning\obj\Debug\Inlamning.Properties.Resources.resources
+C:\Users\maxnf\Desktop\Inlamning\obj\Debug\Inlamning.csproj.GenerateResource.cache
+C:\Users\maxnf\Desktop\Inlamning\obj\Debug\Inlamning.csproj.CoreCompileInputs.cache
+C:\Users\maxnf\Desktop\Inlamning\obj\Debug\Inlamning.exe
+C:\Users\maxnf\Desktop\Inlamning\obj\Debug\Inlamning.pdb
