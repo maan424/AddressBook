@@ -11,9 +11,9 @@ class AddressBook
         addresses = new List<Address>();
     }
 
-    public bool add(string name, string address)
+    public bool add(string name, string address, string email,string telephone)
     {
-        Address addr = new Address(name, address);
+        Address addr = new Address(name, address ,email, telephone);
         Address result = find(name);
 
         if (result == null)
