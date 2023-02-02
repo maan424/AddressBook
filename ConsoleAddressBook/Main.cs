@@ -27,14 +27,22 @@ class AddressPrompt
 
     void displayMenu()
     {
-       
+        Console.ResetColor();
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("Main Menu");
         Console.WriteLine("****************************************");
+        Console.BackgroundColor = ConsoleColor.DarkGray;
         Console.WriteLine("A - Add a Contact");
+        Console.ResetColor();
+        Console.BackgroundColor = ConsoleColor.DarkRed;
         Console.WriteLine("D - Delete a Contact");
+        Console.ResetColor();
+        Console.BackgroundColor = ConsoleColor.DarkGreen;
         Console.WriteLine("E - Edit a Contact");
+        Console.ResetColor();
+        Console.BackgroundColor = ConsoleColor.DarkBlue;
         Console.WriteLine("L - List All Contact");
+        Console.ResetColor();
         Console.WriteLine("Q - Quit");
         Console.WriteLine("****************************************");
     }
@@ -52,28 +60,31 @@ class AddressPrompt
         switch (selection.ToUpper())
         {
             case "A":
-                Console.WriteLine("Enter FirstName: ");
-                firstname = Console.ReadLine();
-                Console.WriteLine("Enter LastName: ");
-                lastname = Console.ReadLine();
-                name = firstname + " " + lastname;
-                Console.WriteLine("Enter Address: ");
-                address = Console.ReadLine();
-                Console.WriteLine("Enter Email: ");
-                email = Console.ReadLine();
-                Console.WriteLine("Enter telephone Number: ");
-                telephone = Console.ReadLine();
-                info = address + " " + email + " " + telephone;
-                if (book.add(name, address, email, telephone))
-                {
-                    Console.WriteLine("Information successfully added!");
-                }
-                else
-                {
-                    Console.WriteLine("An address is already on file for {0}.", name);
-                }
-                break;
+              
+                    Console.WriteLine("Enter FirstName: ");
+                    firstname = Console.ReadLine();
+                    Console.WriteLine("Enter LastName: ");
+                    lastname = Console.ReadLine();
+                    name = firstname + " " + lastname;
+                    Console.WriteLine("Enter Address: ");
+                    address =  Console.ReadLine();
+                    Console.WriteLine("Enter Email: ");
+                    email = Console.ReadLine();
+                    Console.WriteLine("Enter telephone Number: ");
+                    telephone = Console.ReadLine();
+                    info = address + " " + email + " " + telephone;
+                    if (book.add(name, address, email, telephone))
+                    {
+                        Console.WriteLine("Information successfully added!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("An address is already on file for {0}.", name);
+                    }
+              
+            break;
             case "D":
+              
                 Console.WriteLine("Enter Name to Delete: ");
                 Console.WriteLine("Notice:both firstnameand lastname with a space between them");
                 name = Console.ReadLine();
@@ -85,14 +96,17 @@ class AddressPrompt
                 {
                     Console.WriteLine("Address for {0} could not be found.", name);
                 }
+               
                 break;
             case "L":
+               
                 if (book.isEmpty())
                 {
                     Console.WriteLine("There are no entries.");
                 }
                 else
                 {
+
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.WriteLine("Addresses:");
                     Console.ResetColor();
@@ -100,8 +114,10 @@ class AddressPrompt
                     book.list((a) => Console.WriteLine("Name: {0} - Address: {1} - Email: {2} - Telephone: {3}", a.name, a.address, a.email,a.telephone));
                     Console.ResetColor();
                 }
+               
                 break;
             case "E":
+               
                 Console.WriteLine("Enter Name to Edit: ");
                 Console.WriteLine("Notice:both firstnameand lastname with a space between them");
                 name = Console.ReadLine();
@@ -109,12 +125,14 @@ class AddressPrompt
                 if (addr == null)
                 {
                     Console.WriteLine("Address for {0} count not be found.", name);
+                    
                 }
                 else
                 {
                     Console.WriteLine("Enter new Address: ");
                     addr.address = Console.ReadLine();
                     Console.WriteLine("Address updated for {0}", name);
+                
                 }
                 break;
         }
