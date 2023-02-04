@@ -1,60 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 
-class AddressBook
-{
-    List<Address> addresses;
-
-    public AddressBook()
+    class AddressBook
     {
-        addresses = new List<Address>();
-    }
+        List<Address> addresses;
 
-    public bool add(string firstname, string lastname, string address, string email,string telephone)
-    {
-        Address addr = new Address(firstname,lastname, address ,email, telephone);
-        Address result = find(firstname);
-
-        if (result == null)
+        public AddressBook()
         {
-            addresses.Add(addr);
-            return true;
+            addresses = new List<Address>();
         }
-        else
+
+        public bool add( string name, string address, string email, string telephone)
         {
-            return false;
+            Address addr = new Address(name, address, email, telephone);
+            Address result = find(name);
+
+            if (result == null)
+            {
+                addresses.Add(addr);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-    }
 
-    public bool remove(string name)
-    {
-        Address addr = find(name);
-
-        if (addr != null)
+        public bool remove(string name)
         {
-            addresses.Remove(addr);
-            return true;
+            Address addr = find(name);
+
+            if (addr != null)
+            {
+                addresses.Remove(addr);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        else
+
+        public void list(Action<Address> action)
         {
-            return false;
+            addresses.ForEach(action);
+        }
+
+        public bool isEmpty()
+        {
+            return (addresses.Count == 0);
+        }
+
+        public Address find(string name)
+        {
+            Address addr = addresses.Find((a) => a.name == name);
+            return addr;
         }
     }
 
-    public void list(Action<Address> action)
-    {
-        addresses.ForEach(action);
-    }
-
-    public bool isEmpty()
-    {
-        return (addresses.Count == 0);
-    }
-
-    public Address find(string name)
-    {
-        Address addr = addresses.Find((a) => a.name == name);
-        return addr;
-    }
-}

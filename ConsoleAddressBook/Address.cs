@@ -1,19 +1,27 @@
 ﻿using System;
-
-class Address
-{
-    public string name;
-    public string address;
-    public string email;
-    public string telephone;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 
-    public Address(string firstname,string lastname, string address, string email, string telephone)
+    class Address
     {
-        this.name = firstname;
-        this.name = lastname;
-        this.address = address;
-        this.email = email;
-        this.telephone = telephone;
+        public string name;
+        public string address;
+        public string email;
+        public string telephone;
+
+
+        public Address(string name, string address, string email, string telephone)
+        {
+
+
+            this.name = name;
+            this.address = address;
+            this.email = email;
+            this.telephone = telephone;
+        }
+
+
     }
-}
