@@ -1,48 +1,54 @@
+using System;
+using System.Net;
+
+
 namespace UnitTestProject1
 {
+    
     public class UnitTest1
     {
 
-        [TestMethod]
+
+        [Fact]
         public void TestMethod1()
         {
-            string strSource = null;
-            string firstname = "Jenifer";
+            string strSource = "Jenifer";          
             string strActual1 = ConsoleAddressBook.Utility.FixText1(strSource);
-            Assert.AreEqual(expected: firstname, actual: strActual1);
+            Assert.Equal(strActual1, "Jenifer");
         }
-        [TestMethod]
+
+        [Fact]
         public void TestMethod2()
         {
-            string strSource = null;
-            string lastname = "Richmond";
+            string strSource = "Richmond";
             string strActual2 = ConsoleAddressBook.Utility.FixText2(strSource);
-            Assert.AreEqual(expected: lastname, actual: strActual2);
+            Assert.Equal(strActual2, "Richmond");
         }
-        [TestMethod]
+
+        [Fact]
         public void TestMethod3()
         {
-            string strSource = null;
-            string address = "NearCity";
+            string strSource = "NearCity";
             string strActual3 = ConsoleAddressBook.Utility.FixText3(strSource);
-            Assert.AreEqual(expected: address, actual: strActual3);
+            Assert.Equal(strActual3, "NearCity");
         }
-        [TestMethod]
+
+        [Fact]
         public void TestMethod4()
         {
-            string strSource = null;
-            string email = "richmond@yahoo.com";
+            string strSource = "richmond@yahoo.com";
             string strActual4 = ConsoleAddressBook.Utility.FixText4(strSource);
-            Assert.AreEqual(expected: email, actual: strActual4);
+            Assert.Equal(strActual4, "richmond@yahoo.com");
 
         }
-        [TestMethod]
+
+        [Fact]
         public void TestMethod5()
         {
-            string strSource = null;
-            string telephone = "0123456789";
+            string strSource = "0123456789";
+
             string strActual5 = ConsoleAddressBook.Utility.FixText5(strSource);
-            Assert.AreEqual(expected: telephone, actual: strActual5);
+            Assert.Equal(expected: strActual5, actual: "0123456789");
         }
 
     }
