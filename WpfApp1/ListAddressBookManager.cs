@@ -20,11 +20,11 @@ namespace WpfApp1
         #region PROPERTIES
         /// <summary>
         /// Readonly property but still sending the ref of
-        /// the object. participantmanager should not have all its members
+        /// the object.  ListAddressBookManager should not have all its members
         /// accessable publicly. 
         /// </summary>
 
-        public AddressBookManager Participants
+        public AddressBookManager ListAddressBook
         {
             get { return AddressBookManager; }
         }

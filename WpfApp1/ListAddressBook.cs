@@ -17,7 +17,7 @@ namespace WpfApp1
         /// </summary>
 
         private string firstName = string.Empty;
-        private string lastName = "";
+        private string lastName = string.Empty;
 
         //Aggregation - "has a" relation
         private Address address;
@@ -92,7 +92,7 @@ namespace WpfApp1
 
         /// <summary>
         /// <returns> The formatted info string</returns>
-        /// Format the participants first name and last name and the address
+        /// Format the  ListAddressBooks first name and last name and the address
         /// Call address to get the address info!
         /// </summary>
         public override string ToString()

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +14,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.Json.Serialization;
+using System.Net.Http.Json;
+using System.IO;
+using System.Runtime.Intrinsics.X86;
+using System.Collections;
+using System.Security.Cryptography.Xml;
+using System.Xml;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Net.NetworkInformation;
+using System.Threading.Channels;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WpfApp1
 
@@ -23,17 +36,21 @@ namespace WpfApp1
 
     public partial class MainWindow : Window
     {
-        ListAddressBookManager eventManager;
+        ListAddressBookManager ListAddressBookManager;
         public MainWindow()
         {
             InitializeComponent();
             InitialzeGUI();
+
+         
         }
-        /// <summary>
-        /// Initial a value to each texbox.
-        /// Set groupbox1 till True , it means that we can creat a new event.
-        /// </summary>
-        private void InitialzeGUI()
+
+    
+    /// <summary>
+    /// Initial a value to each texbox.
+    /// Set groupbox1 till True , it means that we can creat a new event.
+    /// </summary>
+    private void InitialzeGUI()
         {
             
             comboBox1.ItemsSource = Enum.GetNames(typeof(Countries));
@@ -42,12 +59,9 @@ namespace WpfApp1
 
             listBox1.Items.Clear();
             //Enable the create new Event groupbox.
-           
-            eventManager = new ListAddressBookManager();
+
+            ListAddressBookManager = new ListAddressBookManager();
         }
-
-
-
 
         /// <summary>
         /// This method upgate every inputs boxes and count total  cost and fee.
@@ -55,16 +69,27 @@ namespace WpfApp1
         private void UppdateGUI()
         {
           
-            string[] strInfo = eventManager.Participants.GetParticipantInfo();
-            if (strInfo != null)
-            {
- 
-                listBox1.ItemsSource = strInfo;
+            string[] strInfo = ListAddressBookManager.ListAddressBook.GetParticipantInfo();
+            string json = JsonSerializer.Serialize(strInfo);
+           
 
+          
+
+
+            if (strInfo != null)
+            {               
+                listBox1.ItemsSource = strInfo;
+                string[] result = strInfo[0].Split(" ");
+
+                // using the method
+               
+
+                foreach (string s in result)
+                {
+                    File.WriteAllText("C:\\Users\\maxnf\\Desktop\\WpfApp1\\path.json", s);
+                }
 
             }
-
-
         }
         /// <summary>
         /// This button init a new  calss and update method uppdate()
@@ -75,11 +100,14 @@ namespace WpfApp1
         private void button2_Click(object sender, EventArgs e)
         {
 
-            ListAddressBook participant = new ListAddressBook();
-            if (ReadInput(ref participant))
+
+
+            ListAddressBook ListAddressBook = new ListAddressBook();
+            if (ReadInput(ref ListAddressBook))
             {
 
-                UppdateGUI();
+         
+            UppdateGUI();
             }
         }
         /// <summary>
@@ -100,7 +128,7 @@ namespace WpfApp1
         /// <summary>
         /// call one method to validate inputs
         /// </summary>
-        /// <param name="participant"></param>
+        /// <param name=" ListAddressBook"></param>
         /// <returns>ok</returns>
         private bool ReadInput(ref ListAddressBook participant)
         {
@@ -108,7 +136,7 @@ namespace WpfApp1
             if (ok)
             {
 
-                eventManager.Participants.AddParticipant(participant);
+                ListAddressBookManager.ListAddressBook.AddParticipant(participant);
 
             }
             else
@@ -121,14 +149,14 @@ namespace WpfApp1
         /// <summary>
         ///  Read first name, second name and adress and sent en bool value to validator.
         /// </summary>
-        /// <param name="participant"></param>
+        /// <param name=" ListAddressBook"></param>
         /// <returns>ok</returns>
-        private bool ReadParticipantData(ref ListAddressBook participant)
+        private bool ReadParticipantData(ref ListAddressBook ListAddressBook)
         {
-            participant.FirstName = textBox4.Text;
-            participant.LastName = textBox5.Text;
+            ListAddressBook.FirstName = textBox4.Text;
+            ListAddressBook.LastName = textBox5.Text;
             Address address = ReadAddress();
-            participant.Address = address;
+            ListAddressBook.Address = address;
             bool ok = address.Validate();
 
             return ok;
@@ -160,10 +188,10 @@ namespace WpfApp1
             /*  textBox1.Text = index.ToString();*/
             if (index < 0)
                 return;
-            ListAddressBook participant = eventManager.Participants.GetParticipantAt(index);
-            if (ReadParticipantData(ref participant))
+            ListAddressBook ListAddressBook = ListAddressBookManager.ListAddressBook.GetParticipantAt(index);
+            if (ReadParticipantData(ref ListAddressBook))
             {
-                eventManager.Participants.ChanngeParticipantAt(participant, index);
+                ListAddressBookManager.ListAddressBook.ChanngeParticipantAt(ListAddressBook, index);
                 UppdateGUI();
             }
         }
@@ -178,7 +206,7 @@ namespace WpfApp1
 
             if (index < 0)
                 return;
-            eventManager.Participants.DeleteParticipantAt(index);
+            ListAddressBookManager.ListAddressBook.DeleteParticipantAt(index);
             UppdateGUI();
         }
         /// <summary>
@@ -194,31 +222,22 @@ namespace WpfApp1
 
             if (index >= 0)
             {
-                ListAddressBook participant = eventManager.Participants.GetParticipantAt(index);
+                ListAddressBook ListAddressBook = ListAddressBookManager.ListAddressBook.GetParticipantAt(index);
 
-                textBox4.Text = participant.FirstName;
-                textBox5.Text = participant.LastName;
-                textBox6.Text = participant.Address.Email;
-                textBox7.Text = participant.Address.City;
-                textBox8.Text = participant.Address.Telephone;
-                comboBox1.SelectedIndex = (int)participant.Address.Country;
+                textBox4.Text = ListAddressBook.FirstName;
+                textBox5.Text = ListAddressBook.LastName;
+                textBox6.Text = ListAddressBook.Address.Email;
+                textBox7.Text = ListAddressBook.Address.City;
+                textBox8.Text = ListAddressBook.Address.Telephone;
+                comboBox1.SelectedIndex = (int)ListAddressBook.Address.Country;
 
             }
             else
             {
                 MessageBox.Show("Select an item.");
             }
-        }
+        }    
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

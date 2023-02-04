@@ -10,42 +10,42 @@ namespace WpfApp1
     internal class AddressBookManager
     {
         //FIELDS
-        private List<ListAddressBook> participants;
+        private List<ListAddressBook> ListAddressBook;
 
         //CONSTRUCTOR
         public AddressBookManager()
         {
 
-            participants = new List<ListAddressBook>();
+            ListAddressBook = new List<ListAddressBook>();
             //TestValues();
         }
         //NO PROPERTIES
         /// <summary>
-        /// Get value of a participant when change is required.
+        /// Get value of a  ListAddressBook when change is required.
         /// </summary>
         /// <param name="index"></param>
-        /// <returns>participants[index]</returns>
+        /// <returns> ListAddressBook[index]</returns>
         public ListAddressBook GetParticipantAt(int index)
         {
-            if (index < 0 || index >= participants.Count)
+            if (index < 0 || index >= ListAddressBook.Count)
                 return null;
-            return participants[index];
+            return ListAddressBook[index];
         }
         /// <summary>
-        /// counting of participants
+        /// counting of  ListAddressBooks
         /// </summary>
         public int Count
         {
-            get { return participants.Count; }
+            get { return ListAddressBook.Count; }
         }
         /// <summary>
-        /// Add a participant to the list.
+        /// Add a  ListAddressBook to the list.
         /// </summary>
         /// <returns>bool</returns>
         public bool AddParticipant(string firstName, string lastName, Address addressIn)
         {
             ListAddressBook Participant = new ListAddressBook(firstName, lastName, addressIn);
-            participants.Add(Participant);
+            ListAddressBook.Add(Participant);
             return true;
         }
         /// <summary>
@@ -57,11 +57,11 @@ namespace WpfApp1
         {
             if (ParticipantIn == null)
                 return false;
-            participants.Add(ParticipantIn);
+            ListAddressBook.Add(ParticipantIn);
             return true;
         }
         /// <summary>
-        /// to change a participant of the list.
+        /// to change a  ListAddressBook of the list.
         /// </summary>
         /// <param name="ParticipantIn"></param>
         /// <param name="index"></param>
@@ -70,38 +70,38 @@ namespace WpfApp1
         {
             bool ok = true;
             if ((ParticipantIn != null) && (CheckIndex(index)))
-                participants[index] = ParticipantIn;
+                ListAddressBook[index] = ParticipantIn;
             else
                 ok = false;
             return ok;
         }
         /// <summary>
-        /// check how mant participant is in the list.
+        /// check how many  ListAddressBook is in the list.
         /// to remove a clicked participant.
         /// </summary>
         /// <param name="index"></param>
         /// <returns>bool</returns>
         private bool CheckIndex(int index)
         {
-            return (index >= 0) && (index < participants.Count);
+            return (index >= 0) && (index < ListAddressBook.Count);
         }
         public bool DeleteParticipantAt(int index)
         {
             if (CheckIndex(index))
-                participants.RemoveAt(index);
+                ListAddressBook.RemoveAt(index);
             else
                 return false;
             return true;
         }
         /// <summary>
-        /// convert format of participant to a string.
+        /// convert format of  ListAddressBook to a string.
         /// </summary>
         /// <returns>strInfoStrings</returns>
         public string[] GetParticipantInfo()
         {
-            string[] strInfoStrings = new string[participants.Count];
+            string[] strInfoStrings = new string[ListAddressBook.Count];
             int i = 0;
-            foreach (ListAddressBook participantObj in participants)
+            foreach (ListAddressBook participantObj in ListAddressBook)
             {
                 strInfoStrings[i++] = participantObj.ToString();
             }

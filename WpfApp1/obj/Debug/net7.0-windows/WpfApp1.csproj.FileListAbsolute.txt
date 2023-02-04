@@ -1,13 +1,13 @@
-C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.exe
-C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.deps.json
-C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.runtimeconfig.json
-C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.dll
-C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.pdb
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.csproj.AssemblyReference.cache
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\MainWindow.g.cs
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\App.g.cs
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\WpfApp1_MarkupCompile.cache
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\WpfApp1_MarkupCompile.lref
+C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.exe
+C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.deps.json
+C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.runtimeconfig.json
+C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.dll
+C:\Users\maxnf\Desktop\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.pdb
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\MainWindow.baml
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.g.resources
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
@@ -19,24 +19,3 @@ C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\refint\WpfApp1.dll
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.pdb
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.genruntimeconfig.cache
 C:\Users\maxnf\Desktop\WpfApp1\obj\Debug\net7.0-windows\ref\WpfApp1.dll
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.exe
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.deps.json
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.runtimeconfig.json
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.dll
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.pdb
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.csproj.AssemblyReference.cache
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\MainWindow.g.cs
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\App.g.cs
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1_MarkupCompile.cache
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1_MarkupCompile.lref
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\MainWindow.baml
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.g.resources
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.AssemblyInfoInputs.cache
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.AssemblyInfo.cs
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.csproj.CoreCompileInputs.cache
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.dll
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\refint\WpfApp1.dll
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.pdb
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.genruntimeconfig.cache
-C:\Users\maxnf\Desktop\C sharp clone\WpfApp1\obj\Debug\net7.0-windows\ref\WpfApp1.dll
