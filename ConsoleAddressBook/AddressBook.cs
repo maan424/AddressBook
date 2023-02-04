@@ -11,10 +11,10 @@ class AddressBook
         addresses = new List<Address>();
     }
 
-    public bool add(string name, string address, string email,string telephone)
+    public bool add(string firstname, string lastname, string address, string email,string telephone)
     {
-        Address addr = new Address(name, address ,email, telephone);
-        Address result = find(name);
+        Address addr = new Address(firstname,lastname, address ,email, telephone);
+        Address result = find(firstname);
 
         if (result == null)
         {

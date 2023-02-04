@@ -8,9 +8,10 @@ class Address
     public string telephone;
 
 
-    public Address(string name, string address, string email, string telephone)
+    public Address(string firstname,string lastname, string address, string email, string telephone)
     {
-        this.name = name;
+        this.name = firstname;
+        this.name = lastname;
         this.address = address;
         this.email = email;
         this.telephone = telephone;
